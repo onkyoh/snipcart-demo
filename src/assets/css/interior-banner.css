@@ -1,0 +1,40 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #banner-310 {
+    /* 144px - 252px */
+    padding-top: clamp(9rem, 25vw, 15.75rem);
+    /* 80px - 140px */
+    padding-bottom: clamp(5rem, 13vw, 8.75rem);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to top, #00e84d 0%, #fff 60%, #fff 100%);
+    border-bottom: 1px solid var(--secondary);
+  }
+  #banner-310 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #banner-310 .cs-int-title {
+    /* 39px - 49px */
+    font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 43.75rem;
+    margin: 0 auto 0.75rem;
+    color: var(--headerColor);
+    font-family: var(--headerFontFamily);
+    text-transform: uppercase;
+    position: relative;
+  }
+}
+
+/*# sourceMappingURL=interior-banner.css.map */

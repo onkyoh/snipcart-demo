@@ -1,0 +1,48 @@
+---
+title: "Snipcart"
+description: "Grow your business with the fastest websites in Canada. Get a hand-coded website for just $150/mo made by the best web design service in Toronto."
+permalink: "/"
+tags: "sitemap"
+eleventyNavigation:
+    key: "Home"
+    order: "100"
+---
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+
+<!-- Script for Netlify Identity -->
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script defer>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", (user) => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				});
+			}
+		});
+	}
+</script>
+
+{% endblock %} {% extends 'layouts/base.html' %} {% block body %}
+
+<div class="products">
+	<div class="product">
+		<button
+			class="snipcart-add-item"
+			data-item-id="starry-night"
+			data-item-price="79.99"
+			data-item-url="/"
+			data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+			data-item-image="/assets/images/products/1.jpg"
+			data-item-name="The Starry Night"
+			data-item-custom1-name="Frame color"
+			data-item-custom1-options="Black|Brown|Gold"
+		>
+			Add to cart
+		</button>
+	</div>
+</div>
+
+{% endblock %}

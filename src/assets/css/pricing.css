@@ -1,0 +1,320 @@
+/*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  #pricing-387 {
+    padding: var(--sectionPadding);
+  }
+  #pricing-387 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #pricing-387 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #pricing-387 .cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 52.5rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #pricing-387 .cs-text {
+    /* 48px - 64px */
+    margin-bottom: clamp(3rem, 3vw, 4rem);
+  }
+  #pricing-387 .cs-toggle-group {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #pricing-387 .cs-plan {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    color: var(--headerColor);
+    font-family: var(--headerFontFamily);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  #pricing-387 .cs-plan:hover {
+    cursor: pointer;
+  }
+  #pricing-387 .cs-toggle {
+    width: 3.5em;
+    height: 1.75em;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    margin: 0 0.75em;
+    position: relative;
+    /* prevent flexbox from squishing it */
+    flex: none;
+  }
+  #pricing-387 .cs-toggle:hover {
+    cursor: pointer;
+  }
+  #pricing-387 .cs-toggle.active:before {
+    opacity: 1;
+  }
+  #pricing-387 .cs-toggle.active .cs-toggle-switch {
+    left: 2em;
+  }
+  #pricing-387 .cs-toggle:before {
+    /* top right box */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffba43 -24.69%, #e12213 126.23%);
+    opacity: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s;
+  }
+  #pricing-387 .cs-toggle-switch {
+    width: 1.25em;
+    height: 1.25em;
+    display: block;
+    border: 1px solid var(--secondary);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.25em;
+    transition: left 0.3s;
+    background: #fff;
+  }
+  #pricing-387 .cs-option-group {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #pricing-387 .cs-option-group.option2-active .cs-option1-text {
+    display: none;
+  }
+  #pricing-387 .cs-option-group.option2-active .cs-option2-text {
+    display: inline-block;
+  }
+  #pricing-387 .cs-option1-text {
+    display: inline-block;
+  }
+  #pricing-387 .cs-option2-text {
+    /* push the text down, outside of the group wrapper and animate back up */
+    display: none;
+  }
+  #pricing-387 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #pricing-387 .cs-item {
+    list-style: none;
+    /* 20px - 32px top & bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
+    width: 100%;
+    max-width: 39.375em;
+    background: #fff;
+    border: 1px solid var(--secondary);
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+  }
+  #pricing-387 .cs-item:nth-of-type(2) {
+    background-color: #f7f7f7;
+  }
+  #pricing-387 .cs-item:nth-of-type(2) .cs-option2-text,
+  #pricing-387 .cs-item:nth-of-type(2) .cs-option1-text {
+    transition-delay: 0.1s;
+  }
+  #pricing-387 .cs-popular {
+    background: var(--primary);
+    position: relative;
+    /* clips the popular tag */
+    overflow: hidden;
+    /* send to the top */
+    order: -1;
+  }
+  #pricing-387 .cs-popular:before {
+    /* Most Popular Tag */
+    content: "Popular";
+    font-size: 0.875em;
+    text-align: center;
+    line-height: 1.8125em;
+    font-weight: 700;
+    width: 10.625em;
+    padding: 0 0.75em;
+    color: var(--bodyTextColorWhite);
+    background-color: var(--secondary);
+    position: absolute;
+    display: block;
+    top: 1.25em;
+    right: -3.75em;
+    transform: rotate(42deg);
+  }
+  #pricing-387 .cs-popular .cs-h3,
+  #pricing-387 .cs-popular .cs-item-text,
+  #pricing-387 .cs-popular .cs-price,
+  #pricing-387 .cs-popular .cs-included,
+  #pricing-387 .cs-popular .cs-li,
+  #pricing-387 .cs-popular .cs-small {
+    color: var(--bodyTextColor);
+  }
+  #pricing-387 .cs-popular .cs-button-solid {
+    background-color: #fff;
+    transition: color 0.3s;
+  }
+  #pricing-387 .cs-popular .cs-button-solid:before {
+    background-color: var(--secondary);
+  }
+  #pricing-387 .cs-popular .cs-button-solid:hover {
+    color: #fff;
+  }
+  #pricing-387 .cs-h3 {
+    font-size: 1.875em;
+    line-height: 1.2em;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    color: var(--headerColor);
+    font-family: var(--headerFontFamily);
+    text-transform: uppercase;
+  }
+  #pricing-387 .cs-item-text {
+    font-size: 0.875em;
+    line-height: 1.5em;
+    /* 16px - 24px */
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+    padding: 0;
+    color: var(--bodyTextColor);
+  }
+  #pricing-387 .cs-price {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    font-weight: 700;
+    height: 100%;
+    color: var(--headerColor);
+    text-transform: uppercase;
+    font-family: var(--headerFontFamily);
+    /* spans are inline, need to add block for margin to work */
+  }
+  #pricing-387 .cs-included {
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 700;
+    /* 16px - 24px */
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    color: var(--headerColor);
+    display: block;
+  }
+  #pricing-387 .cs-ul {
+    padding: 0;
+    margin: 0;
+    /* 32px - 40px */
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+  #pricing-387 .cs-li {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75em;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #pricing-387 .cs-li:last-of-type {
+    margin-bottom: 0;
+  }
+  #pricing-387 .lump {
+    display: none;
+  }
+  #pricing-387 .cs-ul.active .sub {
+    display: none;
+  }
+  #pricing-387 .cs-ul.active .lump {
+    display: inline-block;
+  }
+  #pricing-387 .cs-li-img {
+    width: 1.25em;
+    height: auto;
+    margin-top: 0.1875em;
+    margin-right: 0.5em;
+  }
+  #pricing-387 .cs-button-solid {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  #pricing-387 .cs-top-section {
+    margin: 0 0 1rem 0;
+  }
+}
+/* Tablet 768px */
+@media only screen and (min-width: 48rem) {
+  #pricing-387 .cs-card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  #pricing-387 .cs-item {
+    width: 100%;
+    /* ensures they stay the same height if you add more content */
+    align-self: stretch;
+  }
+  #pricing-387 .cs-popular {
+    /* send back to its original order */
+    order: unset;
+  }
+  #pricing-387 #cs-option2-387:before {
+    top: -0.625em;
+  }
+  #pricing-387 #cs-option2-387:after {
+    top: -2.1875em;
+    right: -6.25em;
+  }
+}
+/* Desktop 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #pricing-387 .cs-top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #pricing-387 .cs-price {
+    font-size: 2.125em;
+  }
+  #pricing-387 .cs-ul {
+    /* splits the list into 2 columns */
+    columns: 2;
+    column-gap: 6.875rem;
+  }
+}
+
+/*# sourceMappingURL=pricing.css.map */
