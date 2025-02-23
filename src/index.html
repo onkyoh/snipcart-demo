@@ -14,35 +14,89 @@ eleventyNavigation:
 <!-- Script for Netlify Identity -->
 <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script defer>
-	if (window.netlifyIdentity) {
-		window.netlifyIdentity.on("init", (user) => {
-			if (!user) {
-				window.netlifyIdentity.on("login", () => {
-					document.location.href = "/admin/";
-				});
-			}
-		});
-	}
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
 </script>
 
 {% endblock %} {% extends 'layouts/base.html' %} {% block body %}
 
-<div class="products">
-	<div class="product">
-		<button
-			class="snipcart-add-item"
-			data-item-id="starry-night"
-			data-item-price="79.99"
-			data-item-url="/"
-			data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-			data-item-image="/assets/images/products/1.jpg"
-			data-item-name="The Starry Night"
-			data-item-custom1-name="Frame color"
-			data-item-custom1-options="Black|Brown|Gold"
-		>
-			Add to cart
-		</button>
-	</div>
-</div>
+<!-- ============================================ -->
+<!--                 Collection                   -->
+<!-- ============================================ -->
+
+<section id="collection-1624">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">New Collection</h2>
+            <a href="" class="cs-button-solid">View All Collection</a>
+        </div>
+        <div class="cs-collection-wrapper">
+            <div class="cs-item-offer">
+                <div class="cs-text-wrapper">
+                    <span class="cs-offer-tag">ONLY $20</span>
+                    <h3 class="cs-h3">Latest Winter Collection</h3>
+                    <span class="cs-item-text">Special seasonal offer of the month</span>
+                    <a class="cs-button-solid" href="/">Shop Now</a>
+                </div>
+                <picture class="cs-background" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/ecommerce/hoodie-models.png" />
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/ecommerce/hoodie-models.png" />
+                    <img
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/ecommerce/hoodie-models.png"
+                        alt="model"
+                        width="365"
+                        height="201"
+                    />
+                </picture>
+            </div>
+
+            <ul class="cs-card-group">
+                {%- for product in collections.product -%}
+                <li class="cs-item">
+                    <a href="{{product.data.slug}}" class="cs-link">
+                        <div class="cs-image-group">
+                            <picture class="cs-picture">
+                                <!--Mobile Image-->
+                                <source media="(max-width: 600px)" srcset="{{product.data.image}}" />
+                                <!--Tablet and above Image-->
+                                <source media="(min-width: 601px)" srcset="{{product.data.image}}" />
+                                <img loading="lazy" decoding="async" src="{{product.data.image}}" alt="{{product.data.title}}" width="1280" height="568" />
+                            </picture>
+                        </div>
+                        <div class="cs-details">
+                            <h3 class="cs-product">{{product.data.title}}</h3>
+                            <div class="cs-wrapper">
+                                <div class="cs-flex">
+                                    <span class="cs-old-price">${{product.data.price}}</span>
+                                </div>
+                            </div>
+                            <button
+                                class="snipcart-add-item cs-button-solid"
+                                data-item-id="{{product.data.id}}"
+                                data-item-price="{{product.data.price}}"
+                                data-item-url="/products/{{product.fileSlug}}"
+                                data-item-description="{{product.data.description}}"
+                                data-item-image="{{product.data.image}}"
+                                data-item-name="{{product.data.name}}"
+                            >
+                                Add to cart
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

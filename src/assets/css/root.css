@@ -12,8 +12,8 @@
 @media only screen and (min-width: 0rem) {
   :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #68fc9a;
-    --primaryLight: #68fc9a;
+    --primary: #65dd32;
+    --primaryLight: #65dd32;
     --secondary: #1a1a1a;
     --secondaryLight: #1a1a1a;
     --headerColor: #1a1a1a;
@@ -91,46 +91,22 @@
   }
   .cs-button-solid {
     font-size: 1rem;
-    font-weight: 700;
     /* 46px - 56px */
-    line-height: 3rem;
-    text-align: center;
+    line-height: clamp(2.875rem, 8vw, 3.5rem);
     text-decoration: none;
-    min-width: 9.375rem;
-    margin: 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    padding: 0 1.5rem;
+    font-weight: 700;
+    margin: auto;
     color: #1a1a1a;
-    border: 1px solid var(--secondary);
+    padding: 0 1.5rem;
     background-color: var(--primary);
-    font-family: var(--headerFontFamily);
-    text-transform: uppercase;
     display: inline-block;
     position: relative;
     z-index: 1;
-    overflow: hidden;
-    transition: color 0.3s;
-  }
-  .cs-button-solid:before {
-    content: "";
-    width: 0%;
-    height: 0%;
-    background: #1a1a1a;
-    opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    transition: all 0.3s;
+    transition: background-color 0.3s;
   }
   .cs-button-solid:hover {
+    background-color: var(--secondary);
     color: #fff;
-  }
-  .cs-button-solid:hover:before {
-    height: 100%;
-    width: 105%;
   }
   @keyframes floatAnimation {
     0% {
